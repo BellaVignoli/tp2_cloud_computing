@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: ml-container-isabellagoncalves
-        image: quay.io/isabellagoncalves/ml-container:8.0
+        image: quay.io/isabellagoncalves/ml-container:9.0
         env:
         - name: DATASET_PATH
           value: /app/datasets/
