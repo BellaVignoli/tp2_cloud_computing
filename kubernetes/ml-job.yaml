@@ -1,0 +1,29 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ml-container-job1
+  namespace: isabellagoncalves
+spec:
+  template:
+    metadata:
+      labels:
+        app: ml-container-job-isabellagoncalves
+    spec:
+      containers:
+      - name: ml-container-isabellagoncalves
+        image: quay.io/isabellagoncalves/ml-container:3.0
+        volumeMounts:
+        - name: persistent-storage
+          mountPath: /arq
+        - name: dataset-volume
+          mountPath: /app/datasets
+      restartPolicy: Never
+      volumes:
+      - name: dataset-volume
+        hostPath:
+          path: /home/datasets/spotify
+          type: Directory
+      - name: persistent-storage
+        persistentVolumeClaim:
+          claimName: pvc-isabellagoncalves
+  backoffLimit: 4

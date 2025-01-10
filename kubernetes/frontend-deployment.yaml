@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-container
+  namespace: isabellagoncalves
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend-container-isabellagoncalves
+  template:
+    metadata:
+      labels:
+        app: frontend-container-isabellagoncalves
+    spec:
+      containers:
+      - name: frontend-container-isabellagoncalves
+        image: quay.io/isabellagoncalves/frontend-container:4.0
+        ports:
+        - containerPort: 52032
+        volumeMounts:
+        - name: persistent-storage
+          mountPath: /arq
+      volumes:
+      - name: persistent-storage
+        persistentVolumeClaim:
+          claimName: pvc-isabellagoncalves
