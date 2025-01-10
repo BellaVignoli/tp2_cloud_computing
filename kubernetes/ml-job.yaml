@@ -14,7 +14,7 @@ spec:
         image: quay.io/isabellagoncalves/ml-container:9.0
         env:
         - name: DATASET_PATH
-          value: /app/datasets/
+          value: /app/datasets
         - name: DATASET_NAME
           value: 2023_spotify_ds2.csv
         volumeMounts:
