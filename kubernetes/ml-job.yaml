@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: ml-container-job3
+  name: ml-container-job4
   namespace: isabellagoncalves
 spec:
   template:
@@ -14,7 +14,7 @@ spec:
         image: quay.io/isabellagoncalves/ml-container:5.0
         env:
         - name: DATASET_PATH
-          value: /app/datasets  # Path to the dataset directory
+          value: /app/datasets/
         - name: DATASET_NAME
           value: 2023_spotify_ds2.csv
         volumeMounts:
