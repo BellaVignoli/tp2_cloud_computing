@@ -5,7 +5,13 @@ import pickle
 import pandas as pd
 
 # Carregar o dataset
-file_path = "/app/datasets/2023_spotify_ds1.csv"
+
+dataset_path = os.getenv('DATASET_PATH', '/app/datasets')  # Valor padrão: '/app/datasets'
+dataset_name = os.getenv("DATASET_NAME", "2023_spotify_ds2.csv")
+# file_path = "/app/datasets/2023_spotify_ds1.csv"
+
+file_path = Path(dataset_base_path) / dataset_name
+
 df = pd.read_csv(file_path)
 
 # Pré-processamento dos dados (transformar playlists em listas de itens)
