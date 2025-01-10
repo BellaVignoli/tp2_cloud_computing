@@ -1,6 +1,7 @@
 import os
 from fpgrowth_py import fpgrowth
 import pickle
+from pathlib import Path
 
 # Carregar os dados do CSV (exemplo)
 import pandas as pd
