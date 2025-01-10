@@ -1,0 +1,11 @@
+project: isabellagoncalves-project
+source:
+  repoURL: https://github.com/BellaVignoli/tp2_cloud_computing.git
+  path: kubernetes
+  targetRevision: HEAD
+destination:
+  server: https://kubernetes.default.svc
+  namespace: isabellagoncalves
+syncPolicy:
+  automated:
+    prune: true
