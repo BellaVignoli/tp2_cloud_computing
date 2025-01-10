@@ -1,3 +1,4 @@
+import os
 from fpgrowth_py import fpgrowth
 import pickle
 
