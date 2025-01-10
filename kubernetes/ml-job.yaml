@@ -31,4 +31,3 @@ spec:
       - name: persistent-storage
         persistentVolumeClaim:
           claimName: pvc-isabellagoncalves
-  backoffLimit: 4
