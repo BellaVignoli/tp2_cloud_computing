@@ -1,14 +1,14 @@
 from fpgrowth_py import fpgrowth
 import pickle
 
-# Carregar os dados do CSV (exemplo)
+# Carregar os dados do CSV
 import pandas as pd
 
 # Carregar o dataset
 file_path = "/app/datasets/2023_spotify_ds1.csv"
 df = pd.read_csv(file_path)
 
-# Pré-processamento dos dados (transformar playlists em listas de itens)
+# Pré-processamento dos dados
 itemSetList = df.groupby('pid')['track_name'].apply(list).tolist()
 
 # Gerar regras usando o algoritmo FP-Growth
